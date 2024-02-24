@@ -1,6 +1,10 @@
 const containerDiv = document.querySelector('#container');
 createGrid(16,16);
 
+containerDiv.addEventListener('mouseover',(event) =>{
+    event.target.style.backgroundColor = 'blue';
+});
+
 
 function createGrid(rows,columns){
     const docFragment = document.createDocumentFragment();
