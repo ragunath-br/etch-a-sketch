@@ -9,10 +9,18 @@ createGrid(16,16);
 
 containerDiv.addEventListener('mouseover',(event) =>{
     if(event.target.className === 'gridCell'){
-        event.target.style.backgroundColor = 'blue';
+        event.target.style.backgroundColor = getDynamicColor();
     }
     
 });
+
+function getDynamicColor(){
+    rValue = Math.floor((Math.random())*255);
+    gValue = Math.floor((Math.random())*255);
+    bValue = Math.floor((Math.random())*255);
+    dynamicColor = `rgb(${rValue},${gValue},${bValue})`;
+    return dynamicColor
+}
 
 function resetGrid(){
     setNoOfSquares();
