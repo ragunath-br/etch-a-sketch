@@ -5,6 +5,15 @@ const containerDiv = document.querySelector('#container');
 const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener('click', resetGrid);
 
+createGrid(16,16);
+
+containerDiv.addEventListener('mouseover',(event) =>{
+    if(event.target.className === 'gridCell'){
+        event.target.style.backgroundColor = 'blue';
+    }
+    
+});
+
 function resetGrid(){
     setNoOfSquares();
     let squareLength = calculateSquareLength(noOfSquares);
@@ -25,17 +34,6 @@ function calculateSquareLength(noOfSquares){
     squareLength = (Math.floor(totalWidth/noOfSquares) - 2);
     return squareLength;
 }
-
-
-createGrid(16,16);
-
-containerDiv.addEventListener('mouseover',(event) =>{
-    if(event.target.className === 'gridCell'){
-        event.target.style.backgroundColor = 'blue';
-    }
-    
-});
-
 
 function createGrid(rows,columns){
     const docFragment = document.createDocumentFragment();
