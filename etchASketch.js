@@ -1,4 +1,16 @@
+let noOfSquares = 0;
+
 const containerDiv = document.querySelector('#container');
+
+const resetButton = document.querySelector('#resetButton');
+resetButton.addEventListener('click', setNoOfSquares);
+
+function setNoOfSquares(){
+    noOfSquares = +(prompt('Enter the number of squares per side for the new grid(MAX:100)'))
+}
+
+
+
 createGrid(16,16);
 
 containerDiv.addEventListener('mouseover',(event) =>{
